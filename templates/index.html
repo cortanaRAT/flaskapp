@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+  .bakcgroundn{
+      font-size: xx-large;
+      background-size: cover;
+      background-position: center;
+      filter: blur(5px);
+    }
+
+    .loading-bar {
+  width: 200px;
+  height: 15px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.nvm{
+  margin-left: 50% auto;
+  align-items: center;
+}
+.imgviewer{
+  background-color: rgb(252, 252, 252);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  /* border: 25px solid #ffffff; */
+  max-width: 100%;
+  border-radius: 25px;
+  margin: 50px auto;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+
+
+
+}
+.progress {
+  width: 0;
+  height: 100%;
+  background-color: #4caf50;
+  animation: progress-animation 2s linear infinite;
+}
+
+@keyframes progress-animation {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+  </style>
+  <title>Image Classification</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<img class='bakcgroundn' src="323.png">
+<div class="container">
+  <h1 class="jumbotron bg-primary">Image Classfication</h1>
+  <br><br>
+  <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Upload Your Image :</label>
+      <div class="col-sm-10">          
+        <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+  </form>
+
+	<!-- {% if pro %}
+  <div class="loading-bar">
+    <div class="progress"></div>
+  </div>
+	{% endif %} -->
+
+	{% if img_path %}
+    <div class="nvm">
+      <img class='imgviewer' src='{{img_path}}' >
+    </div>
+      
+   {% endif %}
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
